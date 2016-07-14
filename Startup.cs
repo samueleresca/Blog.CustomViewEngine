@@ -46,13 +46,19 @@ namespace Blog.CustomViewLocationExpander
                 .AddDefaultTokenProviders();
 
 
-                services.AddMvc();
+            services.Configure<RazorViewEngineOptions>(options =>
+            {
+                options.ViewLocationExpanders.Add(new CustomViewLocator());
+            });
+
+            
+            services.AddMvc();
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IRazorViewEngine, Core.CustomViewEngine>();
-            
+
 
 
         }
