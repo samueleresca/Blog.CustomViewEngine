@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using Blog.CustomViewLocationExpander.Data;
 using Blog.CustomViewLocationExpander.Models;
 using Blog.CustomViewLocationExpander.Services;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Blog.CustomViewLocationExpander

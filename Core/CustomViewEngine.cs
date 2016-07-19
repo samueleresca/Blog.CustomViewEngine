@@ -19,8 +19,7 @@ namespace Core
                   pageActivator,
                   htmlEncoder, optionsAccessor, loggerFactory
                   )
-        {
-        }
+        { }
 
         public override IEnumerable<string> ViewLocationFormats
         {
@@ -28,15 +27,16 @@ namespace Core
             {
                 var origLocations = base.ViewLocationFormats;
 
-               
                 //MOCK: Replace with real-world condition
                 var rand = new Random();
                 var randomCondition = (rand.Next(0, 2) == 0);
 
-
                 var varyExtension = randomCondition ? ".vary1" : ".vary2";
 
-
+                /*
+                * ViewLocationFormats contains the list of view location.
+                * Replace the name of views with the vary extension
+                */
                 return base.ViewLocationFormats.Select(f => f.Replace(".cshtml", varyExtension + ".cshtml")).Concat(origLocations);
             }
         }
