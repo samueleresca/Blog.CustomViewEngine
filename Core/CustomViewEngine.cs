@@ -28,9 +28,8 @@ namespace Core
             {
                 var origLocations = base.ViewLocationFormats;
 
-                /*
-                * TODO: Replace with real-world condition
-                */
+               
+                //MOCK: Replace with real-world condition
                 var rand = new Random();
                 var randomCondition = (rand.Next(0, 2) == 0);
 
